@@ -62,12 +62,20 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: 
+    - Tried adding a new toy with the console open in the browser. Got a 500 error saying that there was an uninitialized constant in the ToysController. 
+    - Found that there was a mistake in the create function.
+    - Updated Toys.create to Toy.create
 
 - Update the number of likes for a toy
 
   - How I debugged:
+    - Got an error in the terminal saying "unpermitted parameter: :id"
+    - Added the :id parameter to the permitted params in toy_params
+    - Added json rendering to the function so the update would send a response 
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+    - Got 404:NotFound::RoutingError - no route for delete
+    - added the :destroy route to the routes.rb file 
